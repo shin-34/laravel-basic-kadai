@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Http\Controllers\Posts;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+class PostController extends Controller{
+    public function index(){
+        $posts = DB::table('posts')->get(); 
+        return view('index', compact('posts'));
+    }
+}
